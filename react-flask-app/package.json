@@ -13,7 +13,8 @@
   "scripts": {
     "start": "react-scripts start",
     "start-api": "cd api && venv/Scripts/flask run --no-debugger",
-    "build": "react-scripts build",
+    "builds": [{ "src": "*/index.js", "use": "@now/node-server" }],
+    "routes": [{ "src": "/(.*)", "dest":"index.js"}],
     "test": "react-scripts test",
     "test-api": "cd api && flask test",
     "eject": "react-scripts eject"
@@ -35,3 +36,12 @@
   },
   "proxy":"http://localhost:5000"
 }
+
+
+
+
+
+
+
+
+
