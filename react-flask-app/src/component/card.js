@@ -10,9 +10,12 @@ import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import ThumbDownIcon from '@material-ui/icons/ThumbDown';
+import Button from '@material-ui/core/Button';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    marginBottom:'4%',
+    marginLeft:'4%',
   },
   details: {
     display: 'flex',
@@ -22,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     flex: '1 0 auto',
   },
   cover: {
-    width: 151,
+    width: 200,
   },
   controls: {
     display: 'flex',
@@ -36,34 +39,42 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function MediaControlCard() {
+export default function MediaControlCard(props) {
   const classes = useStyles();
   const theme = useTheme();
+  const { cardContent } = props;
+  console.log(props.cardContent)
 
   return (
-    <Card className={classes.root}>
-      <CardMedia
-        className={classes.cover}
-        image="https://images.financialexpress.com/2020/06/WH-1000XM4-1200.jpg"
-        title="Live from space album cover"
-      />
-      <div className={classes.details}>
-        <CardContent className={classes.content}>
-          <Typography component="h5" variant="h5">
-          UTTARAKHAND BOARD EXAM 2020 DATE SHEET REVISED: EXAMS NOW FROM JUNE 20
-          </Typography>
-          <Typography variant="subtitle1" color="textSecondary">
-          Uttarakhand Board Exam 2020: The result as per reports is expected to release in July 2020          </Typography>
-        </CardContent>
-        <div className={classes.controls}>
-          <IconButton aria-label="previous">
-          {theme.direction === 'rtl' ? <ThumbUpIcon/> : <ThumbUpIcon/>}
-          </IconButton>
-          <IconButton aria-label="next">
-            {theme.direction === 'rtl' ? <ThumbDownIcon/> : <ThumbDownIcon/>}
-          </IconButton>
+    cardContent.map(_cardContent =>
+        <Card className={classes.root} key={_cardContent.title}>
+        <CardMedia
+            className={classes.cover}
+            image={_cardContent.image}
+            title={_cardContent.title}
+        />
+        <div className={classes.details}>
+            <CardContent className={classes.content}>
+            <Typography component="h5" variant="h5">
+                {_cardContent.title}
+            </Typography>
+            <Typography variant="subtitle1" color="textSecondary">
+                {_cardContent.summary}
+            </Typography>
+            </CardContent>
+            <div className={classes.controls}>
+            <IconButton aria-label="previous">
+            <ThumbUpIcon/>
+            </IconButton>
+            <IconButton aria-label="next">
+                <ThumbDownIcon/>
+            </IconButton>
+            <Button variant="contained" color="primary" href="#contained-buttons">
+              Link
+            </Button>
+            </div>
         </div>
-      </div>
-    </Card>
+        </Card>
+    )      
   );
 }

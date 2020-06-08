@@ -78,6 +78,31 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const data = {
+  today: [{
+    'title':"UTTARAKHAND BOARD EXAM 2020 DATE ",
+    'summary':"The Uttarakhand (UK) Board of School Education (UBSE) " ,
+    'image':"https://bsmedia.business-standard.com/_media/bs/img/article/2019-04/24/thumb/1556128853-335.jpg"  
+  },
+  {
+    'title': 'Exams now from June 20',
+    'summary': 'The UBSE is also planning to conduct the Board exams',
+    'image':"https://bsmedia.business-standard.com/_media/bs/img/misc/2018-12/18/thumb/google-1545123087-72182440.jpg" 
+  }
+],
+   yesterday : [{
+      'title':'Exams now from June 20',
+      'summary':"summary 3",
+      'image':"https://bsmedia.business-standard.com/_media/bs/img/article/2020-04/28/thumb/1588057097-1298.jpg"  
+    },
+    {
+      'title':"title 4",
+      'summary':"summary 4",
+      'image':"https://bsmedia.business-standard.com/_media/bs/img/article/2017-03/26/thumb/1490520701-9115.jpg" 
+    }
+  ]
+}
+
 export default function PersistentDrawerLeft() {
   const classes = useStyles();
   const theme = useTheme();
@@ -146,7 +171,7 @@ export default function PersistentDrawerLeft() {
         })}
       >
         <div className={classes.drawerHeader} />
-        <LinearStepper />
+        <LinearStepper data={data}/>
       </main>
     </div>
   );
