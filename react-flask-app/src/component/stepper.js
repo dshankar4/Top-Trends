@@ -41,7 +41,7 @@ export default function VerticalLinearStepper(props) {
       case 1:
         return 'yesterday';      
       default:
-        return 'Unknown step';
+        return 'daybeforeyesterday';
     }
   }
   const handleNext = () => {
