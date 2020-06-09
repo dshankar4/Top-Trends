@@ -179,7 +179,6 @@ export default function PersistentDrawerLeft() {
         <List>
           {['All Category','India','Business','Sports','World','Politics','Technology','Startup','Entertainment','Science','Automobile'].map((text, index) => (
             <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
           ))}
