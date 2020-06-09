@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
   cover: {
     width: 200,
+    height: 200,
   },
   controls: {
     display: 'flex',
@@ -38,6 +39,10 @@ const useStyles = makeStyles((theme) => ({
   playIcon: {
     height: 38,
     width: 38,
+  },
+  publish: {
+    float:'right',
+    marginTop: theme.spacing(-12),
   },
 }));
 
@@ -53,17 +58,18 @@ export default function MediaControlCard(props) {
         <Grid
             container
             direction="row"
+            spacing={4}
             justify="flex-start"
             alignItems="center"
         > 
-            <Grid item>
+            <Grid item xs={4}>
                 <CardMedia
                     className={classes.cover}
                     image={_cardContent.image}
                     title={_cardContent.title}
                 />
             </Grid>
-            <Grid item>
+            <Grid item xs={7}>
                 <div className={classes.details}>
                     <CardContent className={classes.content}>
                     <Typography component="h6" variant="subtitle1">
@@ -80,11 +86,16 @@ export default function MediaControlCard(props) {
                     <IconButton aria-label="next">
                         <ThumbDownIcon/>
                     </IconButton>
-                    <a  href="#contained-buttons">
+                    <a  href={_cardContent.link}>
                         Link
                     </a>
                     </div>
                 </div>
+            </Grid>
+            <Grid item xs={1}>
+              <Typography variant="caption" className={classes.publish}>
+                {_cardContent.time}
+              </Typography>
             </Grid>
          </Grid>
         </Card>
