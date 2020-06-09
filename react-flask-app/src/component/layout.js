@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
+    backgroundColor:'#77d8d8',
   },
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
@@ -173,7 +174,7 @@ export default function PersistentDrawerLeft() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Persistent drawer
+            RSS Feeds
           </Typography>
         </Toolbar>
       </AppBar>
