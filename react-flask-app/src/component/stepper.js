@@ -88,10 +88,10 @@ export default function VerticalLinearStepper(props) {
         ))}
       </Stepper>
       {activeStep === steps.length && (
-        <Paper square elevation={0} className={classes.resetContainer}>
+        <Paper square elevation={0}>
           <Typography>All steps completed - you&apos;re finished</Typography>
           <Button onClick={handleReset} className={classes.button}>
-            Reset
+            Back to top
           </Button>
         </Paper>
       )}
