@@ -73,10 +73,10 @@ export default function MediaControlCard(props) {
                 <div className={classes.details}>
                     <CardContent className={classes.content}>
                     <Typography component="h6" variant="subtitle1">
-                        {_cardContent.title.length < 40 ? _cardContent.title : _cardContent.title.slice(0,40).concat("...")}
+                        {_cardContent.title.length < 50 ? _cardContent.title : _cardContent.title.slice(0,50).concat("...")}
                     </Typography>
                     <Typography variant="subtitle2" color="textSecondary">
-                    {_cardContent.summary.length < 100 ? _cardContent.summary : _cardContent.summary.slice(0,80).concat("...")}
+                    {_cardContent.summary.length < 160 ? _cardContent.summary : _cardContent.summary.slice(0,160).concat("...")}
                     </Typography>
                     </CardContent>
                     <div className={classes.controls}>
