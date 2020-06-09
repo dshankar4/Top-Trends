@@ -13,11 +13,12 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import LinearStepper from'./stepper';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
+import Button from '@material-ui/core/Button';
 
 const drawerWidth = 240;
 
@@ -76,6 +77,9 @@ const useStyles = makeStyles((theme) => ({
     }),
     marginLeft: 0,
   },
+  settings: {
+    float:"right",  
+    },
 }));
 
 const data = {
@@ -91,34 +95,34 @@ const data = {
   }
 ],
    yesterday : [{
-      'title':'Exams now from June 20',
-      'summary':"summary 3",
+      'title':'US CHARGES CHINESE MANUFACTURER OF EXPORTING DEFECTIVE N95 RESPIRATORS',
+      'summary':"The company, King Year Packaging and Printing, for each of the four counts faces a fine of up to $500,000 or the total gain and/or loss, whichever is greater",
       'image':"https://bsmedia.business-standard.com/_media/bs/img/article/2020-04/28/thumb/1588057097-1298.jpg"  
     },
     {
-      'title':"title 4",
-      'summary':"summary 4",
+      'title':"FRENCH TROOPS KILL HEAD OF AL-QAEDA IN THE ISLAMIC MAGHREB IN MALI,",
+      'summary':"French Defence Minister Florence Parly said Abdelmalek Droukdel had led all the AQMI operations in northern Africa and the region of Sahel",
       'image':"https://bsmedia.business-standard.com/_media/bs/img/article/2017-03/26/thumb/1490520701-9115.jpg" 
     }
   ],
   daybeforeyesterday: [{
-    'title':"UTTARAKHAND BOARD EXAM 2020 DATE ",
-    'summary':"The Uttarakhand (UK) Board of School Education (UBSE) " ,
+    'title':"BACKLASH OVER TRUMP POSTS: FACEBOOK BLINKS, ASSURES CONTENT POLICY REVIEW ",
+    'summary':"CEO Mark Zuckerberg said Facebook would be more transparent about its decision-making" ,
     'image':"https://bsmedia.business-standard.com/_media/bs/img/article/2019-04/24/thumb/1556128853-335.jpg"  
   },
   {
-    'title': 'Exams now from June 20',
-    'summary': 'The UBSE is also planning to conduct the Board exams',
+    'title': 'SURAT TEXTILE MARKET URGES GOVT TO RELAX COVID NORMS TO SOLVE LABOUR ISSUES',
+    'summary': 'Hundreds of thousands of migrant labourers who come to the city for work are involved in stocking sarees and dress materials in the godown and in loading the parcels which are sent to other states',
     'image':"https://bsmedia.business-standard.com/_media/bs/img/misc/2018-12/18/thumb/google-1545123087-72182440.jpg" 
   },
   {
-    'title':"UTTARAKHAND BOARD EXAM 2020 DATE ",
-    'summary':"The Uttarakhand (UK) Board of School Education (UBSE) " ,
+    'title':"YATRA ONLINE TERMINATES PENDING MERGER AGREEMENT WITH US-BASED EBIX INC ",
+    'summary':"Online travel firm Yatra Online Inc said it was seeking damages against Ebix for breaching terms of their merger agreement" ,
     'image':"https://bsmedia.business-standard.com/_media/bs/img/article/2019-04/24/thumb/1556128853-335.jpg"  
   },
   {
-    'title': 'Exams now from June 20',
-    'summary': 'The UBSE is also planning to conduct the Board exams',
+    'title': 'OPEC, RUSSIA MEET TO EXTEND RECORD OIL SUPPLY CUTS, PUSH FOR COMPLIANCE',
+    'summary': 'An extension to cuts was contingent on high compliance, three Opec sources told Reuters',
     'image':"https://bsmedia.business-standard.com/_media/bs/img/misc/2018-12/18/thumb/google-1545123087-72182440.jpg" 
   }
 ],
@@ -127,7 +131,7 @@ const data = {
 export default function PersistentDrawerLeft() {
   const classes = useStyles();
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
 
   const handleDrawerOpen = () => {
     setOpen(true);
