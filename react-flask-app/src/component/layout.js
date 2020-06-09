@@ -15,10 +15,6 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import LinearStepper from'./stepper';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
-import Button from '@material-ui/core/Button';
 
 const drawerWidth = 240;
 
